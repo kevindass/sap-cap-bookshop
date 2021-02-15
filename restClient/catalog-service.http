@@ -1,0 +1,40 @@
+GET http://localhost:4004/catalog/Books
+
+###
+GET http://localhost:4004/catalog/Books?$expand=author
+
+###
+GET http://localhost:4004/catalog/Orders
+
+###
+GET http://localhost:4004/catalog/Authors
+
+###
+GET http://localhost:4004/catalog/Authors?$expand=books
+
+###
+POST http://localhost:4004/catalog/Books
+Content-Type: application/json
+
+{
+    "ID": 101,
+    "title": "This is my new book: Max Streifeneder",
+    "stock": 23 
+}
+
+###
+POST http://localhost:4004/catalog/Authors
+Content-Type: application/json 
+
+{
+    "ID": 4711,
+    "name": "Max Justin"
+}
+
+###
+POST http://localhost:4004/catalog/Orders
+Content-Type: application/json
+
+{
+    "book_ID": 421, "quantity": 5
+}
